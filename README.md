@@ -7,9 +7,13 @@ If you haven't worked with VCF files before, I suggest take some time to underst
 
 # What you need
 1. The bam file for your scRNA data. Can be found in the 10X output folder.
-2. The VCF file. Contains the genotypic differences.
+2. The VCF file. Contains the genotypic differences. (Check out the Mouse Genome Project)
 3. Barcodes file. A list of barcodes that you want to demultiplex. The bam file will have data for all the barcodes, incliding empty droplets. You can provide a custom list of barcodes or use filtered_feature_bc_matrix/barcodes.tsv.gz in the 10x cellranger output.
-4. Individuals file, just the names of strains that are supposed to be in the data. If you omit a starin, even if it is in the VCF file, it will be ignored while demultiplexing. 
+4. Individuals file, just the names of strains that are supposed to be in the data. If you omit a starin, even if it is in the VCF file, it will be ignored while demultiplexing.
+5. Install libraries  
+  a. bcftools, I used a singularity image from dockerhub  
+  b. samtools, I used a singularity image from dockerhub
+  c. A demultiplexing tool, I installed demuxalot from pip. It also is present in Demuxify singularity image the authers shared. I couldn't get it to run that way.
 
 # Steps
 ## 1. Filter the VCF
